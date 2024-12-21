@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "402426675902",
+    "project_id": "brick-breaker-1576e",
+    "storage_bucket": "brick-breaker-1576e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402426675902:android:672390367bd4b19d6ed4ef",
+        "android_client_info": {
+          "package_name": "com.example.brick_smasher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9MopHsY5qU1AcIpm1mY5WxFMcNVjMc6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402426675902:android:244413bc97c49c056ed4ef",
+        "android_client_info": {
+          "package_name": "com.example.bricksmasher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9MopHsY5qU1AcIpm1mY5WxFMcNVjMc6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
