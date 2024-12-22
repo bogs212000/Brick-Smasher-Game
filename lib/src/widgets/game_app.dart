@@ -71,7 +71,7 @@ class _GameAppState extends State<GameApp> {
           ),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(1),
+              padding: const EdgeInsets.only(top: 1, left: 1, right: 1, bottom: 30),
               child: Center(
                 child: Column(
                   // Modify from here...
@@ -85,19 +85,21 @@ class _GameAppState extends State<GameApp> {
                             game: game,
                             overlayBuilderMap: {
                               PlayState.welcome.name: (context, game) =>
-                                  const OverlayScreen(
-                                    title: 'TAP TO PLAY',
-                                    subtitle: 'Use arrow keys or swipe',
+                                  Padding(
+                                    padding: const EdgeInsets.all(50.0),
+                                    child: const OverlayScreen(
+                                      title: 'TAP TO PLAY',
+                                      subtitle: 'Slide the bat to bounce the ball',
+                                    ),
                                   ),
                               PlayState.gameOver.name: (context, game) =>
                                   const OverlayScreen(
-                                    title: 'G A M E   O V E R',
+                                    title: 'GAME OVER',
                                     subtitle: 'Tap to Play Again',
                                   ),
                               PlayState.won.name: (context, game) =>
-
                                   const OverlayScreen(
-                                    title: 'Y O U   W O N ! ! !',
+                                    title: 'YOU WON!!!',
                                     subtitle: 'Tap to Play Again',
                                   ),
                             },

@@ -46,6 +46,7 @@ dependencies:
   cloud_firestore: ^5.6.0
   firebase_core: ^3.9.0
   animation_list: ^3.1.0
+  flutter_glow: ^0.3.2
 
 dev_dependencies:
   flutter_test:

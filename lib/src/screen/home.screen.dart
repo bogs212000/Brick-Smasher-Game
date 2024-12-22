@@ -1,6 +1,7 @@
 import 'package:brick_smasher/src/auth/auth.wrapper.dart';
 import 'package:brick_smasher/src/function/functions.dart';
 import 'package:brick_smasher/src/screen/leaderboard.dart';
+import 'package:brick_smasher/src/screen/settings.screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             onTap: () {
                               Get.to(() => Leaderboard());
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.leaderboard,
                                 color: Colors.white,
@@ -101,8 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       5.widthBox,
                       GestureDetector(
                         onTap: () async {
-                          await FirebaseAuth.instance.signOut();
-                          Get.offAll(AuthWrapper());
+                          Get.to(()=>SettingsScreen());
                         },
                         child: Image.asset(
                           appImage.setting_btn,
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  20.heightBox,
+                  10.heightBox,
                   Expanded(
                     child: ListView(
                       physics: BouncingScrollPhysics(),
@@ -164,43 +164,35 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         VxBox(
                           child: Center(
-                            child: ElevatedButton(
-                              onPressed: () {
+                            child: GestureDetector(
+                              onTap: () {
                                 setState(() {
                                   level = 5;
                                 });
                                 Get.to(() => GameApp());
                               },
-                              child: 'EASY'.text.bold.size(20).make(),
+                              child: Image.asset(appImage.easy_btn),
                             ),
                           ),
                         )
                             .margin(const EdgeInsets.only(bottom: 20))
-                            .color(Colors.white)
-                            .bgImage(const DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(appImage.bg_image)))
                             .height(120)
                             .width(200)
                             .rounded
                             .make(),
                         VxBox(
                           child: Center(
-                            child: ElevatedButton(
-                              onPressed: () {
+                            child: GestureDetector(
+                              onTap: () {
                                 setState(() {
                                   level = 7;
                                 });
                                 Get.to(() => GameApp());
                               },
-                              child: 'MEDIUM'.text.bold.size(20).make(),
+                              child: Image.asset(appImage.medium_btn),
                             ),
                           ),
                         )
-                            .color(Colors.white)
-                            .bgImage(DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(appImage.bg_image)))
                             .margin(EdgeInsets.only(bottom: 20))
                             .height(120)
                             .width(200)
@@ -208,21 +200,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             .make(),
                         VxBox(
                           child: Center(
-                            child: ElevatedButton(
-                              onPressed: () {
+                            child: GestureDetector(
+                              onTap: () {
                                 setState(() {
                                   level = 10;
                                 });
                                 Get.to(() => GameApp());
                               },
-                              child: 'HARD'.text.bold.size(20).make(),
+                              child: Image.asset(appImage.hard_btn),
                             ),
                           ),
                         )
-                            .color(Colors.white)
-                            .bgImage(DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(appImage.bg_image)))
                             .margin(EdgeInsets.only(bottom: 20))
                             .height(120)
                             .width(200)

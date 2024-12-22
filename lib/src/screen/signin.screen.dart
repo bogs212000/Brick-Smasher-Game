@@ -1,5 +1,7 @@
 
 import 'package:brick_smasher/src/screen/signup.dart';
+import 'package:brick_smasher/src/screen/test.dart';
+import 'package:brick_smasher/src/screen/test_sudoku.dart';
 import 'package:brick_smasher/src/utils/image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -161,7 +163,8 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 GestureDetector(
                   onTap: (){
-
+                     // Get.to(()=> PuzzleScreen());
+                     Get.to(()=> TicTacToeGame());
                     // Get.to(()=>ForgotPassPage());
                   },
                   child: 'Forgot password'.text.white.bold.size(12).make(),
