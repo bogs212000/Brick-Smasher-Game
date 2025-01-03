@@ -15,4 +15,5 @@ class appImage {
   static const setting_btn = 'assets/btn/setting.png';
   static const star_btn = 'assets/btn/star.png';
   static const blank_square_btn = 'assets/btn/blank_square.png';
+  static const bg = 'assets/images/img.png';
 }

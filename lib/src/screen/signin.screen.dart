@@ -5,6 +5,7 @@ import 'package:brick_smasher/src/screen/test_sudoku.dart';
 import 'package:brick_smasher/src/utils/image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -29,7 +30,10 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(40),
-        color: Colors.blueAccent,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(appImage.bg), fit: BoxFit.cover)),
+        // color: Colors.blueAccent,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Column(
@@ -47,7 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ],
-            ),
+            ).animate()
+                .fade(duration: 100.ms)
+                .scale(delay: 100.ms),
             20.heightBox,
             SizedBox(
               height: 50,
@@ -73,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-            ),
+            ).animate()
+                .fade(duration: 200.ms)
+                .scale(delay: 200.ms),
             20.heightBox,
             SizedBox(
               height: 50,
@@ -109,7 +117,9 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icon(Icons.lock, color: Colors.white),
                 ),
               ),
-            ),
+            ).animate()
+                .fade(duration: 300.ms)
+                .scale(delay: 300.ms),
             15.heightBox,
             Row(
               children: [
@@ -117,7 +127,9 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: () {
                     Get.to(() => SignUpPage());
                   },
-                  child: 'Sign up'.text.white.bold.size(13).make(),
+                  child: 'Sign up'.text.white.bold.size(13).make().animate()
+                      .fade(duration: 400.ms)
+                      .scale(delay: 400.ms),
                 ),
                 Spacer(),
                 ElevatedButton(
@@ -156,7 +168,9 @@ class _LoginPageState extends State<LoginPage> {
                             passwordController.text.trim());
                       }
                     },
-                    child: 'Sign in'.text.bold.make()),
+                    child: 'Sign in'.text.bold.make()).animate()
+                    .fade(duration: 400.ms)
+                    .scale(delay: 400.ms),
               ],
             ),
             Row(
@@ -164,10 +178,12 @@ class _LoginPageState extends State<LoginPage> {
                 GestureDetector(
                   onTap: (){
                      // Get.to(()=> PuzzleScreen());
-                     Get.to(()=> TicTacToeGame());
+                     // Get.to(()=> TicTacToeGame());
                     // Get.to(()=>ForgotPassPage());
                   },
-                  child: 'Forgot password'.text.white.bold.size(12).make(),
+                  child: 'Forgot password'.text.white.bold.size(12).make().animate()
+                      .fade(duration: 500.ms)
+                      .scale(delay: 500.ms),
                 ),
               ],
             )

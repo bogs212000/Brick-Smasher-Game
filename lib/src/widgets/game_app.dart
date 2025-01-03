@@ -56,18 +56,12 @@ class _GameAppState extends State<GameApp> {
                       height: 10,
                     ),
                   )),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.lightBlueAccent,
         ),
         body: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.blueAccent,
-                Colors.blueAccent,
-              ],
-            ),
+            // image: DecorationImage(image: AssetImage(appImage.bg), fit: BoxFit.c),
+            color: Colors.lightBlueAccent
           ),
           child: SafeArea(
             child: Padding(
@@ -85,9 +79,9 @@ class _GameAppState extends State<GameApp> {
                             game: game,
                             overlayBuilderMap: {
                               PlayState.welcome.name: (context, game) =>
-                                  Padding(
-                                    padding: const EdgeInsets.all(50.0),
-                                    child: const OverlayScreen(
+                                  const Padding(
+                                    padding: EdgeInsets.all(50.0),
+                                    child: OverlayScreen(
                                       title: 'TAP TO PLAY',
                                       subtitle: 'Slide the bat to bounce the ball',
                                     ),

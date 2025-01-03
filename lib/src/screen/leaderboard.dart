@@ -22,7 +22,7 @@ class _LeaderboardState extends State<Leaderboard> {
       appBar: AppBar(
         centerTitle: true,
         title: 'Leaderboard'.text.make(),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.lightBlueAccent,
         foregroundColor: Colors.white,
       ),
       body: VxBox(
@@ -142,7 +142,7 @@ class _LeaderboardState extends State<Leaderboard> {
       )
           .height(MediaQuery.of(context).size.height)
           .width(MediaQuery.of(context).size.width)
-          .color(Colors.blueAccent)
+          .color(Colors.lightBlueAccent)
           .make(),
     );
   }

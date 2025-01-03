@@ -19,7 +19,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.baseColor,
+        backgroundColor: Colors.lightBlueAccent,
         foregroundColor: Colors.white,
       ),
       body: VxBox(
@@ -45,7 +45,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           .height(MediaQuery.of(context).size.height)
           .padding(EdgeInsets.all(20))
           .width(MediaQuery.of(context).size.width)
-          .color(AppColor.baseColor)
+          .color(Colors.lightBlueAccent)
           .make(),
     );
   }
