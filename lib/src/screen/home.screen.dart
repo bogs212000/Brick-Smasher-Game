@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:brick_smasher/src/auth/auth.wrapper.dart';
 import 'package:brick_smasher/src/function/functions.dart';
 import 'package:brick_smasher/src/screen/leaderboard.dart';
@@ -13,6 +14,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../utils/const.dart';
 import '../utils/image.dart';
+import '../utils/sounds.dart';
 import '../utils/user.model.dart';
 import '../widgets/game_app.dart';
 
@@ -25,6 +27,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   UserModel? userModel;
+  final AudioPlayer player = AudioPlayer();
+
+
+  void bg_music() async {
+    if (!isPlaying) {
+      await player.setReleaseMode(ReleaseMode.loop); // Set the music to loop
+      await player.play(AssetSource(AppSounds.bg_music));
+      await player.setVolume(0.2);
+      setState(() {
+        isPlaying = true; // Mark as playing
+      });
+    }
+  }
 
   @override
   void initState() {
@@ -33,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
     getPlayerRank(setState);
     fetchUserData();
     loadUserData();
+    bg_music();
   }
 
   void loadUserData() async {
