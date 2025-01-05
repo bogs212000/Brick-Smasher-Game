@@ -28,6 +28,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
+      title: 'Smash Ball',
       debugShowCheckedModeBanner: false,
       home:  AuthWrapper(),
     );

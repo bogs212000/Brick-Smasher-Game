@@ -1,4 +1,5 @@
 
+import 'package:brick_smasher/src/screen/forgotpass.dart';
 import 'package:brick_smasher/src/screen/signup.dart';
 import 'package:brick_smasher/src/screen/test.dart';
 import 'package:brick_smasher/src/screen/test_sudoku.dart';
@@ -179,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: (){
                      // Get.to(()=> PuzzleScreen());
                      // Get.to(()=> TicTacToeGame());
-                    // Get.to(()=>ForgotPassPage());
+                    Get.to(()=>ForgotPassword());
                   },
                   child: 'Forgot password'.text.white.bold.size(12).make().animate()
                       .fade(duration: 500.ms)

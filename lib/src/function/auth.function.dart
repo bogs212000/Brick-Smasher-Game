@@ -12,6 +12,26 @@ final FirebaseFirestore fbStore = FirebaseFirestore.instance;
 final String? currentUserEmail = FirebaseAuth.instance.currentUser!.email;
 
 class AuthService {
+  Future<void>  forgotPass(String email)async {
+    try{
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      Get.snackbar(
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
+        'Notice',
+        'Link has been sent!',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.white,
+        colorText: Colors.blueAccent,
+        duration: Duration(seconds: 3),
+        isDismissible:
+        false, // Make it non-dismissible until login is complete
+      );
+    } catch(e){
+      print(e);
+    }
+  }
+
   Future<void> signIn(String email, String password) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);

@@ -72,6 +72,14 @@ class _LeaderboardState extends State<Leaderboard> {
                           padding: EdgeInsets.all(8.0),
                           child: Row(
                             children: [
+                              '${index + 1}'
+                                  .text
+                                  .center
+                                  .size(20)
+                                  .black
+                                  .extraBold
+                                  .make(),
+                              5.widthBox,
                               Stack(
                                 children: [
                                   if (index == 0)
@@ -92,19 +100,8 @@ class _LeaderboardState extends State<Leaderboard> {
                                   if (index >= 3)
                                     Image.asset(
                                       appImage.frame,
-                                      height: 47,
+                                      height: 35,
                                     ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 18, top: 10),
-                                    child: '${index + 1}'
-                                        .text
-                                        .center
-                                        .size(20)
-                                        .white
-                                        .extraBold
-                                        .make(),
-                                  ),
                                 ],
                               ),
                               10.widthBox,

@@ -73,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   VxBox(
                     child: Column(
                       children: [
+                        10.heightBox,
                         Row(
                           children: [
                             Stack(
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ).animate().fade(duration: 100.ms).scale(delay: 100.ms),
-                        20.heightBox,
+                        10.heightBox,
                         Row(
                           children: [
                             Stack(
@@ -146,22 +147,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                     if (rank == 1)
                                       Image.asset(
                                         appImage.frame1,
-                                        width: 50,
+                                        width: 60,
                                       ),
                                     if (rank == 2)
                                       Image.asset(
                                         appImage.frame2,
-                                        width: 50,
+                                        width: 60,
                                       ),
                                     if (rank == 3)
                                       Image.asset(
                                         appImage.frame3,
-                                        width: 50,
+                                        width: 60,
                                       ),
                                     if (rank! > 4)
                                       Image.asset(
                                         appImage.frame3,
-                                        width: 50,
+                                        width: 60,
                                       ),
                                     "  ${userModel!.username.toString()}"
                                         .text

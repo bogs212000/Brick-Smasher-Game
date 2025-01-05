@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:brick_smasher/src/function/functions.dart';
 import 'package:brick_smasher/src/utils/const.dart';
+import 'package:brick_smasher/src/utils/sounds.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
@@ -25,14 +26,27 @@ class BrickBreaker extends FlameGame
           ),
         );
 
+  late AudioPlayer player = AudioPlayer();
+
+  void _playGameOver() {
+    player.play(AssetSource(AppSounds.game_over));
+  }
+
+  void _playWin() {
+    player.play(AssetSource(AppSounds.win));
+  }
 
   final ValueNotifier<int> score = ValueNotifier(0);
   final rand = math.Random();
+
   double get width => size.x;
+
   double get height => size.y;
 
   late PlayState _playState;
+
   PlayState get playState => _playState;
+
   set playState(PlayState playState) {
     _playState = playState;
     switch (playState) {
@@ -42,6 +56,10 @@ class BrickBreaker extends FlameGame
         overlays.add(playState.name);
         if (playState == PlayState.won) {
           addScore(score.value);
+        } else if (playState == PlayState.gameOver) {
+          _playGameOver();
+        } else if (playState == PlayState.won) {
+          _playWin();
         }
       case PlayState.playing:
         overlays.remove(PlayState.welcome.name);
@@ -68,7 +86,7 @@ class BrickBreaker extends FlameGame
     world.removeAll(world.children.query<Bat>());
     world.removeAll(world.children.query<Brick>());
 
-    score.value = 0;                                            // Add this line
+    score.value = 0; // Add this line
     playState = PlayState.playing;
 
     world.add(Ball(

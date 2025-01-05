@@ -5,10 +5,10 @@ class appImage {
   static const medium_btn = 'assets/btn/medium_btn.png';
   static const hard_btn = 'assets/btn/hard_btn.png';
   static const index_frame = 'assets/btn/index_frame.png';
-  static const frame = 'assets/btn/frame.png';
-  static const frame1 = 'assets/btn/frame1.png';
-  static const frame2 = 'assets/btn/frame2.png';
-  static const frame3 = 'assets/btn/frame3.png';
+  static const frame = 'assets/images/badge3.png';
+  static const frame1 = 'assets/images/badge4.png';
+  static const frame2 = 'assets/images/badge1.png';
+  static const frame3 = 'assets/images/badge2.png';
   static const score_bg = 'assets/btn/scorebg.png';
   static const back_btn = 'assets/btn/back.png';
   static const logout_btn = 'assets/btn/logout.png';
